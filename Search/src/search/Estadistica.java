@@ -78,7 +78,7 @@ public class Estadistica {
             }
         }
         }
-    }// este metodo debe ubicarase dentro de un bucle
+    }
     
     
     public void muestraLetras(){
@@ -87,7 +87,23 @@ public class Estadistica {
         }
     }
     
-    public void vacio(){
-        String commit;
+    public double [] promedios(String url,ArrayList <String>stringo){
+        String cadena="";
+        double [] promedio= new double[this.letras.size()];
+        for (int i = 0; i < stringo.size(); i++) {
+           cadena= cadena+stringo.get(i); 
+        }
+        for (int i = 0; i < promedio.length; i++) {
+            promedio[i]=this.letras.get(i).getFrecuencia()/cadena.length();
+        }
+        return promedio;
+        /*String texto= this.lectorTexto(url);
+        texto=texto.replaceAll("[^\\dA-Za-z]", "");
+        int total= texto.length();
+        float [] promedio= new float[this.letras.size()];
+        for (int i = 0; i < this.letras.size(); i++) {
+            promedio[i]= this.letras.get(i).getFrecuencia()/total;
+        }*/
+
     }
 }

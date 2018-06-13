@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package metodologia;
+//package metodologia;
 
 import java.io.Console;
 
@@ -25,7 +25,7 @@ String user= String.valueOf(palabras[x]);
           System.out.println(palabras[x]);
 }
       char[] aCaracteres;
-      char[] aCaracteres = palabras[x].toCharArray;
+      //char[] aCaracteres = palabras[x].toCharArray;
     }
     
 }

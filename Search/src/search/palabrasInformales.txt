@@ -1,7 +1,9 @@
 hola
 he
+alegria
 chevere
 contento
+contarte
 quieres
 onda
 vos
@@ -36,3 +38,6 @@ tan
 pronto
 tio
 hermano
+vemos
+verte
+manso

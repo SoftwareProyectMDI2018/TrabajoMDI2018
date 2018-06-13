@@ -2,6 +2,11 @@ lamento
 lagrimas
 noche
 soledad
+solos
+comun
+ordinario
+abrumador
+solo
 perdon
 lo siento
 no
@@ -18,6 +23,7 @@ sin
 desesperanza
 quizas
 pierdo
+perdido
 perder
 pierden
 perdemos

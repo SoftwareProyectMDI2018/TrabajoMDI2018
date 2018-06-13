@@ -51,8 +51,15 @@ public class Estadistica {
         
     }
     
-    public String letraMediana(String ubicacion){
+    public String letraMediana(/*String ubicacion,*/ArrayList<String> stringo){
         String mediana="";
+        String cadena="";
+        for (int i = 0; i < stringo.size(); i++) {
+            cadena=cadena+stringo.get(i);    
+        }
+        mediana= ""+cadena.charAt(cadena.length()/2);
+        return mediana;
+        /*String mediana="";
         //Leer Texto
         String texto=lectorTexto(ubicacion);
         //Quitar espacios y caracteres especiales(.,;!¡¿?')
@@ -62,7 +69,7 @@ public class Estadistica {
         //Buscar mediana
             mediana=""+textoPuro.charAt(largo/2);
         //Retorna
-        return mediana;
+        return mediana;*/
     }
     
     public void desintegraPalabra(ArrayList<String> palabras,ArrayList<Letra>letras){
@@ -87,7 +94,7 @@ public class Estadistica {
         }
     }
     
-    public double [] promedios(String url,ArrayList <String>stringo){
+    public double [] promedios(/*String url,*/ArrayList <String>stringo){
         String cadena="";
         double [] promedio= new double[this.letras.size()];
         for (int i = 0; i < stringo.size(); i++) {

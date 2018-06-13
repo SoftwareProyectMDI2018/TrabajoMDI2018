@@ -1,11 +1,11 @@
 /*
 *Autor: Juan
 *Fecha: 12 - 6 - 2018
-*Ultima Modificacion: 12 -6 2018
+*Ultima Modificacion: 13 -6 2018
 *Proposito: Leer archivos txt y pasarlos a un arreglo
 */
 import java.io.File; //la clase usa File
-import java.io.FileNotFoundException;; //la clase podria usarla
+import java.io.FileNotFoundException;; //la clase
 import java.util.Scanner; //la clase usa Scanner
 public class LecturaArchivo
 {

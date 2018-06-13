@@ -1,3 +1,11 @@
+/**
+Autor: juan
+Fecha: 13-6-2018
+Ultima modificacion: 13-6-2018
+Proposito:
+-Determinar el caracter del texto ya sea formal o informal
+-Determinar el estado predominante del texto (tristeza,Entusiasmo,Euforia)
+*/
 public class Caracter_Y_Estado
 {
   //Método que determina (o al menos pretende hacerlo) el estado de animo que representa el texto
@@ -49,7 +57,7 @@ public class Caracter_Y_Estado
       //calculamos contador con mayor valor
     }else if(contadorEuforia > contadorEntusiasmo && contadorEuforia > contadorTristeza)  //Si predomina la euforia
       {
-      System.out.println("\nEl texto expresa un estado de animo eufórico");// mensaje
+      System.out.println("\nEl texto expresa un estado de euforia");// mensaje
     }else if(contadorEntusiasmo > contadorEuforia && contadorEntusiasmo > contadorTristeza) //Si predomina el entusiasmo
       {
         System.out.println("\nEl texto expresa un estado de entusiasmo");//mensaje
@@ -91,7 +99,7 @@ public class Caracter_Y_Estado
         }else if(contadorInformales > contadorFormales){ //en caso de que las ocurrencias de informales sea mayor..
           System.out.println("\nEl texto es de caracter informal");
         }else{
-          System.out.println("\nNo puede determinarse el caracter.El texto esta incompleto.");
+          System.out.println("\nNo puede determinarse el caracter del texto");
       }
     }
 

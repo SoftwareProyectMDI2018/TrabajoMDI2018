@@ -56,13 +56,13 @@ public class OrdenAlfabetico {
         System.out.println("El tamaño de ambos arreglos no coincide");//Se imprime un mensaje de error al usuario
         System.out.println("No puede ejecutar este método."); //Mensaje a Usuario
       }
-    }//fin método orderedList
-    //Método displayList que muestra la lista
+    }//fin método listaOrdenada
+    //Método muestraLista que muestra la lista
     public void muestraLista(String[]arreglo)
     {
         for(int i = 0; i < arreglo.length; i++)
         {
             System.out.println(arreglo[i]);
         }
-    }//fin del método displaysList
+    }//fin del método muestraLista
 }//fin de la clase OrdenAlfabetico

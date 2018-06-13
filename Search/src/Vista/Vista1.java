@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import javax.swing.JFileChooser;
+
 /**
  *
  * @author Enzo
@@ -35,6 +37,7 @@ public class Vista1 extends javax.swing.JFrame {
         btn_analizar = new javax.swing.JButton();
         btn_examinar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,23 +52,32 @@ public class Vista1 extends javax.swing.JFrame {
         });
 
         txt_url.setText("C://Ejemplo/ejemplo/ejemplo.txt");
-        txt_url.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_urlActionPerformed(evt);
-            }
-        });
 
         jLabel1.setText("URL:");
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel2.setText("Proyecto Search");
+        jLabel2.setText("Proyecto");
 
         btn_analizar.setText("Analizar");
+        btn_analizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_analizarActionPerformed(evt);
+            }
+        });
 
         btn_examinar.setText("Examinar");
+        btn_examinar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_examinarActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Descripcion del programa");
+
+        jLabel4.setFont(new java.awt.Font("HP Simplified", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel4.setText("Search[ ]");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -81,7 +93,6 @@ public class Vista1 extends javax.swing.JFrame {
                         .addComponent(btn_salir))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -90,7 +101,11 @@ public class Vista1 extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(txt_url, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btn_examinar)))))
+                                        .addComponent(btn_examinar))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 23, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -98,7 +113,9 @@ public class Vista1 extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
@@ -140,9 +157,22 @@ public class Vista1 extends javax.swing.JFrame {
        this.dispose();
     }//GEN-LAST:event_btn_salirActionPerformed
 
-    private void txt_urlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_urlActionPerformed
+    private void btn_examinarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_examinarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_urlActionPerformed
+        JFileChooser dig = new JFileChooser();
+        int option = dig.showOpenDialog(this);
+        if (option== JFileChooser.APPROVE_OPTION) {
+            String file = dig.getSelectedFile().getPath();
+            txt_url.setText(file);
+        }
+        
+    }//GEN-LAST:event_btn_examinarActionPerformed
+
+    private void btn_analizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_analizarActionPerformed
+        // TODO add your handling code here:
+        String direccion="";
+        direccion=txt_url.getText();
+    }//GEN-LAST:event_btn_analizarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,6 +216,7 @@ public class Vista1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txt_url;
     // End of variables declaration//GEN-END:variables

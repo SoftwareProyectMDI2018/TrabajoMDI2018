@@ -5,7 +5,7 @@
 *Proposito: Leer archivos txt y pasarlos a un arreglo
 */
 import java.io.File; //la clase usa File
-import java.io.FileNotFoundException;; //la clase
+import java.io.FileNotFoundException;; //la clase podria usarla
 import java.util.Scanner; //la clase usa Scanner
 public class LecturaArchivo
 {

@@ -35,7 +35,7 @@ public class LecturaArchivo
     return null; //retornamos null
   }
   //método que muestra el archivo.txt en un arreglo.(Creado para fines de prueba)
-  public static void muestraArchivo(){
+  private static void muestraArchivo(){
     String[] palabras = lecturaArreglo("EstadoEntusiasmo.txt"); //le pasamos path  del archivo o el nombre si esta en la carpeta del proyecto
     System.out.println(); //salto
     //mostramos el arreglo

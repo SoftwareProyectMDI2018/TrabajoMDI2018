@@ -18,14 +18,11 @@ public class Search {
         // TODO code application logic here
         Busqueda b1 = new Busqueda();
         b1.wordList();
-        b1.readWord();
-        //b1.getT21().setBq(b1);
-        //b1.getT21_2().setBq(b1);
-        //Thread21 t21= new Thread21();
-        //t21.setBq(b1);
-        
-        System.out.println("             "+b1.getP1());
+        b1.readWord();        
         b1.searchWord();
+        OrdenAlfabetico orden= new OrdenAlfabetico();
+        orden.listaOrdenada(b1.getTextWordList());
+        orden.muestraLista();
     }
     
 }

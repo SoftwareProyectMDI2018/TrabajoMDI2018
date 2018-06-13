@@ -37,6 +37,7 @@ public class Busqueda {
     protected int ceiling;
     protected boolean flagFirstTime_1;
     protected boolean flagFirstTime_2;
+    protected OrdenAlfabetico ordenAl;
 
     public Busqueda() {
 
@@ -44,10 +45,20 @@ public class Busqueda {
         t21.setBq(this);
         this.t21_2 = new Thread21("Thread-2");
         t21_2.setBq(this);
+        this.ordenAl = new OrdenAlfabetico();
+        ordenAl.setBusqueda(this);
         this.contador = 0;
         this.ceiling = 0;
         flagFirstTime_1 = false;
         flagFirstTime_2 = false;
+    }
+
+    public OrdenAlfabetico getOrdenAl() {
+        return ordenAl;
+    }
+
+    public void setOrdenAl(OrdenAlfabetico ordenAl) {
+        this.ordenAl = ordenAl;
     }
 
     public int getContador() {
@@ -321,7 +332,8 @@ public class Busqueda {
                     System.out.println("RUNNNNNNNNNNNN");
                     flag1 = false;
                     flag2 = false;
-                    j = wordList.size();
+                    j = wordList.size() - 1;
+                    continue;
 
                 }
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -352,7 +364,6 @@ public class Busqueda {
 
                 }
                 if (flagFirstTime_1 == true && flag2 == true && half1 == true) {
-                    
 
                     //ceiling =p1
                     p2 = 0;
@@ -366,47 +377,45 @@ public class Busqueda {
                         ceiling = ceiling;
                         //floor = p1;
                         p1 = p2;
+                        System.out.println("HERE#######");
 
                     }
 
                     if (((ceiling - p1) % 2 != 0)) {
                         floor = p1;
-                        p2 = ((p2 + 1) / 2) + floor;
+                        p2 = ((p1 + 1) / 2) + floor;
                         ceiling = ceiling;
                         //floor = p1;
                         p1 = p2;
-
+                        System.out.println("HERE#######222222");
                     }
 
                 }
 
                 if (flag1 == true && half1 == true) {
-                    
 
                     p2 = 0;
                     flag1 = false;
                     flag2 = false;
-                    
+
                     if (((p1 - floor) % 2 == 0)) {
-                        //System.out.println(">>>>>>>>>>><FLAG2_1");
+                        System.out.println(">>>>>>>>>>><FLAG2_1888");
 
                         p2 = (p1 - floor) / 2;//p2 / 2;
                         ceiling = p1;
                         p1 = p2 + floor;
-                    //    System.out.println("P1: " + p1);
+                        //    System.out.println("P1: " + p1);
 
                     }
-                    
-                     if (((p1 - floor) % 2 != 0)) {
-                        //System.out.println(">>>>>>>>>>>>>>FLAG2_2");
+
+                    if (((p1 - floor) % 2 != 0)) {
+                        System.out.println(">>>>>>>>>>>>>>FLAG2_18888");
 
                         p2 = (p2 + 1) / 2;
                         ceiling = p1;
                         p1 = p2 + floor;
 
                     }
-                    
-                    
 
                 }
 
@@ -438,7 +447,7 @@ public class Busqueda {
                     }
 
                 }
-                if (flagFirstTime_2 == true && half2 == true && flag2 == true && flagFirstTime_1==true) {
+                if (flagFirstTime_2 == true && half2 == true && flag2 == true && flagFirstTime_1 == true) {
                     //flag3=false;Esta variable booleana parece ser que no se usa.
                     //ceiling =p1
                     p2 = 0;
@@ -466,7 +475,7 @@ public class Busqueda {
 
                 }
 
-                if (flagFirstTime_2 == true && flagFirstTime_1 == false && half1==false) {//Este corresponde con mayor hasta el final
+                if (flagFirstTime_2 == true && flagFirstTime_1 == false && half1 == false) {//Este corresponde con mayor hasta el final
                     half2 = true;
                     p2 = 0;
                     p2 = ((wordList.size()) - p1);

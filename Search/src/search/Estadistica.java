@@ -103,7 +103,8 @@ public class Estadistica {
         float [] promedio= new float[this.letras.size()];
         for (int i = 0; i < this.letras.size(); i++) {
             promedio[i]= this.letras.get(i).getFrecuencia()/total;
-        }*/
+        }
+        return promedio;*/
 
     }
 }

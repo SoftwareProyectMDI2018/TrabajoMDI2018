@@ -8,6 +8,7 @@ package search;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -18,7 +19,7 @@ import java.util.Iterator;
 public class Estadistica {
    ArrayList <Letra> letras= new ArrayList();
    
-   public void cargaArrayAbc(){
+   public void cargaArrayAbc(){//USAR SIMEPRE ANTES DE LOS DEMAS METODOS
    String abecedario= "abcdefghijklmñopqrstuvwxyz";
    char [] abechar= abecedario.toCharArray();
        for (int i = 0; i <abechar.length; i++) {
@@ -94,14 +95,14 @@ public class Estadistica {
         }
     }
     
-    public double [] promedios(/*String url,*/ArrayList <String>stringo){
+    public float [] promedios(/*String url,*/ArrayList <String>stringo){
         String cadena="";
-        double [] promedio= new double[this.letras.size()];
+        float [] promedio= new float[this.letras.size()];
         for (int i = 0; i < stringo.size(); i++) {
            cadena= cadena+stringo.get(i); 
         }
         for (int i = 0; i < promedio.length; i++) {
-            promedio[i]=this.letras.get(i).getFrecuencia()/cadena.length();
+            promedio[i]=(float)this.letras.get(i).getFrecuencia()/cadena.length();
         }
         return promedio;
         /*String texto= this.lectorTexto(url);
@@ -114,4 +115,14 @@ public class Estadistica {
         return promedio;*/
 
     }
+    
+    public void soutPromedios(float [] doble){
+        String num="";
+        for (int i = 0; i < doble.length; i++) {
+            DecimalFormat df= new DecimalFormat("#0.00");
+            num=df.format(doble[i]);
+            System.out.println("->"+this.letras.get(i).getLetra()+" = "+num);
+        }
+    }
+   
 }

@@ -18,6 +18,16 @@ import java.util.Iterator;
  */
 public class Estadistica {
    ArrayList <Letra> letras= new ArrayList();
+   protected Busqueda bsq;
+
+    public Busqueda getBsq() {
+        return bsq;
+    }
+
+    public void setBsq(Busqueda bsq) {
+        this.bsq = bsq;
+    }
+   
    
    public void cargaArrayAbc(){//USAR SIMEPRE ANTES DE LOS DEMAS METODOS
    String abecedario= "abcdefghijklmñopqrstuvwxyz";
@@ -73,11 +83,11 @@ public class Estadistica {
         return mediana;*/
     }
     
-    public void desintegraPalabra(ArrayList<String> palabras,ArrayList<Letra>letras){
+    public void desintegraPalabra(Busqueda busqueda,ArrayList<Letra>letras){
         int contador=0;
-        for (int x = 0; x < palabras.size(); x++) {
-        char[] achar=new char[palabras.get(x).length()];
-        achar=palabras.get(x).toCharArray();
+        for (int x = 0; x < busqueda.getTextWordList().size(); x++) {
+        char[] achar=new char[busqueda.getTextWordList().get(x).length()];
+        achar=busqueda.getTextWordList().get(x).toCharArray();
         for (int i = 0; i < achar.length; i++) {
             for (int j = 0; j < this.letras.size(); j++) {
                 if (achar[i]==this.letras.get(j).getLetra()) {
@@ -90,16 +100,18 @@ public class Estadistica {
     
     
     public void muestraLetras(){
+        System.out.println("");
         for(int i=0; i<this.letras.size();i++){
+            
         System.out.println("-"+this.letras.get(i).getLetra()+"--> "+this.letras.get(i).getFrecuencia());  
         }
     }
     
-    public float [] promedios(/*String url,*/ArrayList <String>stringo){
+    public float [] promedios(/*String url,*/Busqueda busqueda){
         String cadena="";
         float [] promedio= new float[this.letras.size()];
-        for (int i = 0; i < stringo.size(); i++) {
-           cadena= cadena+stringo.get(i); 
+        for (int i = 0; i < busqueda.getTextWordList().size(); i++) {
+           cadena= cadena+busqueda.getTextWordList().get(i); 
         }
         for (int i = 0; i < promedio.length; i++) {
             promedio[i]=(float)this.letras.get(i).getFrecuencia()/cadena.length();

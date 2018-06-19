@@ -67,7 +67,7 @@ class Thread21 implements Runnable {
         System.out.println("Running " + threadName);
         //flagFinded=false;
         try {
-            System.out.println("bq.p1: "+bq.getP1());
+           // System.out.println("bq.p1: "+bq.getP1());
            // System.out.println(">>>"+bq.getTextWordList().get(bq.getIi()-1));
             if (flagA == true) {
                 
@@ -77,11 +77,11 @@ class Thread21 implements Runnable {
                    // System.out.println("Thread FlagA: " + threadName + ", " + i);
                     if (bq.getTextWordList().get((bq.getContador()-1)).equals(bq.getWordList().get(i))) {
 
-                        System.err.println("Palabra Encontrada!!!>>FlagA>>>>" + bq.getWordList().get(i));
+                        System.err.println("Palabra Encontrada!!!  FlagA:  " + bq.getWordList().get(i));
                        // i=1;
                         flagFinded=true;
                     } else if(i==1 && flagFinded==false){
-                        System.err.println("NO ENCONTRADA##############################");
+                        System.err.println("NO ENCONTRADA!!!");
                         flagFinded=true;
                         //System.out.println("Palabra No Encontrada:( FlagA");
                     }
@@ -108,7 +108,7 @@ class Thread21 implements Runnable {
                     // System.out.println("****PALABRA****: "+bq.getWordList().get(i2)+ threadName + ", " + i2);
 
                     if (bq.getTextWordList().get((bq.getContador()-1)).equals(bq.getWordList().get(i2))) {
-                                               System.err.println("Palabra Encontrada!!!>>FlagB" + bq.getWordList().get(i2)+"-----FLAG--"+flagFinded);
+                                               System.err.println("Palabra Encontrada!!!  FlagB:  " + bq.getWordList().get(i2));
                         
                         //i2=bq.wordList.size();
                         flagFinded=true;
@@ -116,7 +116,7 @@ class Thread21 implements Runnable {
                         
 
                     } else if(i2==((bq.wordList.size()-1)-1) && flagFinded==false){
-                        System.err.println("NO ENCONTRADA##############################");
+                        System.err.println("NO ENCONTRADA!!!");
                         flagFinded=true;
 
                         //System.out.println("Palabra No Encontrada:( FlagB");
@@ -124,8 +124,8 @@ class Thread21 implements Runnable {
                     if(flagFinded==true){
                        //System.err.println("Palabra Encontrada!!!>>FlagB" + bq.getWordList().get(i2)+"-----FLAG--"+flagFinded);
                         i2=(bq.wordList.size()-1)-1;
-                        System.err.println("ERROR");
-                        System.out.println("FLAG:"+flagFinded);
+                       // System.err.println("ERROR");
+                        //System.out.println("FLAG:"+flagFinded);
                         //t.interrupt();//Antes era "t"
                         //t.join();
                         //t=null;
@@ -148,18 +148,18 @@ class Thread21 implements Runnable {
 
     public void start() {
         t=null;
-        System.out.println("bq.p1: "+bq.getP1());
-        System.out.println("Starting " + threadName);
+       // System.out.println("bq.p1: "+bq.getP1());
+       // System.out.println("Starting " + threadName);
         
         if (t == null) {
-            System.out.println("T==NUL********************");
+           // System.out.println("T==NUL********************");
             flagFinded=false;
             t = new Thread(this, threadName);
             t.start();
 
             t.setPriority(1);
             //t.getPriority();
-            System.out.println("Priority: " + t.getPriority());
+           // System.out.println("Priority: " + t.getPriority());
         }
     }
 }

@@ -61,7 +61,7 @@ public class OrdenAlfabetico {
 
     //método que toma los elementos de un arreglo y los ordena en un arreglo nuevo
     //Teniendo en cuenta el estandar de ascii
-    public void listaOrdenada(List arreglo1/*, ArrayList arreglo2*/){
+    public void listaOrdenada(Busqueda busqueda/*, ArrayList arreglo2*/){
         
       //if(arreglo1.size() == arreglo2.size() && arreglo1.get(0) != null )
       //{
@@ -69,11 +69,11 @@ public class OrdenAlfabetico {
         int condicionDeControl = 0; //variable que controla la condición
         for(int i = 0; i <= 127; i++)
         {
-            for(int j = 0; j < arreglo1.size(); j++)
+            for(int j = 0; j < busqueda.getTextWordList().size(); j++)
             {
-                if(((int)arreglo1.get(j).toString().toUpperCase().charAt(k)) == i){ //Condición clave
-                    arreglo2.get(k + condicionDeControl) ;
-                           arreglo2.add((k + condicionDeControl), (String)arreglo1.get(j));                     condicionDeControl++; //Incremento
+                if(((int)busqueda.getTextWordList().get(j)./*toString().*/toUpperCase().charAt(k)) == i){ //Condición clave
+                    //arreglo2.get(k + condicionDeControl) ;
+                           arreglo2.add((k + condicionDeControl), (String)busqueda.getTextWordList().get(j));                     condicionDeControl++; //Incremento
                 }//fin condición si
             }//fin segundo for
         }//fin primer for
